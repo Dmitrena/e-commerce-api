@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: postgres-amazon-api
+    image: postgres:15.2-alpine3.17
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=pass1234
+      - POSTGRES_DB=amazonv2
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
